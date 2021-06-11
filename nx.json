@@ -40,6 +40,9 @@
     },
     "shared-layout": {
       "tags": ["shared", "ui"]
+    },
+    "domain-home": {
+      "tags": ["domain", "page"]
     }
   }
 }
