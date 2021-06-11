@@ -6,6 +6,11 @@ const routes: Routes = [
     path: 'home',
     loadChildren: () => import('@ab/home').then((module) => module.HomeModule),
   },
+  {
+    path: 'not-found',
+    loadChildren: () =>
+      import('@ab/not-found').then((module) => module.NotFoundModule),
+  },
 ];
 
 @NgModule({
