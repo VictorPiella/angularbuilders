@@ -37,6 +37,9 @@
     },
     "shared-form": {
       "tags": ["shared", "ui"]
+    },
+    "shared-layout": {
+      "tags": ["shared", "ui"]
     }
   }
 }
