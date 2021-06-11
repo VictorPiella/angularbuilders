@@ -31,6 +31,9 @@
     },
     "shared-data": {
       "tags": ["shared", "core"]
+    },
+    "shared-ui": {
+      "tags": ["shared", "ui"]
     }
   }
 }
