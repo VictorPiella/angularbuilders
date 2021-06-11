@@ -21,7 +21,10 @@
       "@ab/form": ["libs/shared/form/src/index.ts"],
       "@ab/layout": ["libs/shared/layout/src/index.ts"],
       "@ab/home": ["libs/domain/home/src/index.ts"],
-      "@ab/not-found": ["libs/domain/not-found/src/index.ts"]
+      "@ab/not-found": ["libs/domain/not-found/src/index.ts"],
+      "@ab/resource": ["libs/domain/resource/src/index.ts"],
+      "@ab/category": ["libs/domain/category/src/index.ts"],
+      "@ab/resource-new": ["libs/domain/resource-new/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

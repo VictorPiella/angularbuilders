@@ -8,5 +8,8 @@ module.exports = {
     '<rootDir>/libs/shared/layout',
     '<rootDir>/libs/domain/home',
     '<rootDir>/libs/domain/not-found',
+    '<rootDir>/libs/domain/resource',
+    '<rootDir>/libs/domain/category',
+    '<rootDir>/libs/domain/resource-new',
   ],
 };
