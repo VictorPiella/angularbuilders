@@ -25,6 +25,9 @@
     "www-e2e": {
       "tags": [],
       "implicitDependencies": ["www"]
+    },
+    "shared-global": {
+      "tags": ["shared", "core"]
     }
   }
 }

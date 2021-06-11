@@ -36,10 +36,10 @@
       "tags": "lib"
     },
     "@nrwl/angular:component": {
+      "style": "css",
       "changeDetection": "OnPush",
       "inlineStyle": true,
-      "skipTests": true,
-      "style": "css"
+      "skipTests": true
     },
     "@schematics/angular:component": {
       "changeDetection": "OnPush",
@@ -97,22 +97,15 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/www",
             "index": "apps/www/src/index.html",
             "main": "apps/www/src/main.ts",
             "polyfills": "apps/www/src/polyfills.ts",
             "tsConfig": "apps/www/tsconfig.app.json",
-            "assets": [
-              "apps/www/src/favicon.ico",
-              "apps/www/src/assets"
-            ],
-            "styles": [
-              "apps/www/src/styles.css"
-            ],
+            "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
+            "styles": ["apps/www/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -177,9 +170,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/www"
-          ],
+          "outputs": ["coverage/apps/www"],
           "options": {
             "jestConfig": "apps/www/jest.config.js",
             "passWithNoTests": true
@@ -208,8 +199,47 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
+            "lintFilePatterns": ["apps/www-e2e/**/*.{js,ts}"]
+          }
+        }
+      }
+    },
+    "shared-global": {
+      "projectType": "library",
+      "root": "libs/shared/global",
+      "sourceRoot": "libs/shared/global/src",
+      "prefix": "ab",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/shared/global"],
+          "options": {
+            "project": "libs/shared/global/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/global/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/global/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/global"],
+          "options": {
+            "jestConfig": "libs/shared/global/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
             "lintFilePatterns": [
-              "apps/www-e2e/**/*.{js,ts}"
+              "libs/shared/global/src/**/*.ts",
+              "libs/shared/global/src/**/*.html"
             ]
           }
         }
