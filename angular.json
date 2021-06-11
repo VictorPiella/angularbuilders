@@ -654,6 +654,47 @@
           }
         }
       }
+    },
+    "domain-search-box": {
+      "projectType": "library",
+      "root": "libs/domain/search-box",
+      "sourceRoot": "libs/domain/search-box/src",
+      "prefix": "ab",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/domain/search-box"],
+          "options": {
+            "project": "libs/domain/search-box/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/domain/search-box/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/domain/search-box/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/domain/search-box"],
+          "options": {
+            "jestConfig": "libs/domain/search-box/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/domain/search-box/src/**/*.ts",
+              "libs/domain/search-box/src/**/*.html"
+            ]
+          }
+        }
+      }
     }
   }
 }
