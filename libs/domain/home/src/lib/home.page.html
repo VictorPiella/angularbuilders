@@ -1,5 +1,7 @@
 <main>
   <ab-ui-header [header]="header"></ab-ui-header>
-  <ab-category-list [categories]="categories"></ab-category-list>
+  <ab-category-list
+                    *ngIf="categories$ | async as categories"
+                    [categories]="categories">
+  </ab-category-list>
 </main>
-<!-- *ngIf="categories$ | async as categories" -->
