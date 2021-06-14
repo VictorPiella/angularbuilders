@@ -18,13 +18,29 @@
               }
             ]
           }
+        ],
+        "@angular-eslint/component-class-suffix": [
+          "error",
+          {
+            "suffixes": [
+              "Component",
+              "Form",
+              "List",
+              "Page",
+              "Template",
+              "Widget"
+            ]
+          }
         ]
       }
     },
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "rules": {
+        "@typescript-eslint/no-empty-function": ["off"],
+        "@angular-eslint/no-empty-lifecycle-method": ["off"]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
