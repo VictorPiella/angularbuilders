@@ -13,5 +13,6 @@ module.exports = {
     '<rootDir>/libs/domain/resource-new',
     '<rootDir>/libs/domain/search',
     '<rootDir>/libs/domain/search-box',
+    '<rootDir>/libs/shared/auth',
   ],
 };

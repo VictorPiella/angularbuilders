@@ -97,19 +97,14 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
-          "outputs": [
-            "{options.outputPath}"
-          ],
+          "outputs": ["{options.outputPath}"],
           "options": {
             "outputPath": "dist/apps/www",
             "index": "apps/www/src/index.html",
             "main": "apps/www/src/main.ts",
             "polyfills": "apps/www/src/polyfills.ts",
             "tsConfig": "apps/www/tsconfig.app.json",
-            "assets": [
-              "apps/www/src/favicon.ico",
-              "apps/www/src/assets"
-            ],
+            "assets": ["apps/www/src/favicon.ico", "apps/www/src/assets"],
             "styles": [
               "apps/www/src/styles.css",
               "node_modules/bulma/css/bulma.css"
@@ -178,9 +173,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/www"
-          ],
+          "outputs": ["coverage/apps/www"],
           "options": {
             "jestConfig": "apps/www/jest.config.js",
             "passWithNoTests": true
@@ -209,9 +202,7 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": [
-              "apps/www-e2e/**/*.{js,ts}"
-            ]
+            "lintFilePatterns": ["apps/www-e2e/**/*.{js,ts}"]
           }
         }
       }
@@ -224,9 +215,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/shared/global"
-          ],
+          "outputs": ["dist/libs/shared/global"],
           "options": {
             "project": "libs/shared/global/ng-package.json"
           },
@@ -242,9 +231,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/global"
-          ],
+          "outputs": ["coverage/libs/shared/global"],
           "options": {
             "jestConfig": "libs/shared/global/jest.config.js",
             "passWithNoTests": true
@@ -269,9 +256,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/shared/data"
-          ],
+          "outputs": ["dist/libs/shared/data"],
           "options": {
             "project": "libs/shared/data/ng-package.json"
           },
@@ -287,9 +272,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/data"
-          ],
+          "outputs": ["coverage/libs/shared/data"],
           "options": {
             "jestConfig": "libs/shared/data/jest.config.js",
             "passWithNoTests": true
@@ -314,9 +297,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/shared/ui"
-          ],
+          "outputs": ["dist/libs/shared/ui"],
           "options": {
             "project": "libs/shared/ui/ng-package.json"
           },
@@ -332,9 +313,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/ui"
-          ],
+          "outputs": ["coverage/libs/shared/ui"],
           "options": {
             "jestConfig": "libs/shared/ui/jest.config.js",
             "passWithNoTests": true
@@ -359,9 +338,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/shared/form"
-          ],
+          "outputs": ["dist/libs/shared/form"],
           "options": {
             "project": "libs/shared/form/ng-package.json"
           },
@@ -377,9 +354,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/form"
-          ],
+          "outputs": ["coverage/libs/shared/form"],
           "options": {
             "jestConfig": "libs/shared/form/jest.config.js",
             "passWithNoTests": true
@@ -404,9 +379,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/shared/layout"
-          ],
+          "outputs": ["dist/libs/shared/layout"],
           "options": {
             "project": "libs/shared/layout/ng-package.json"
           },
@@ -422,9 +395,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/shared/layout"
-          ],
+          "outputs": ["coverage/libs/shared/layout"],
           "options": {
             "jestConfig": "libs/shared/layout/jest.config.js",
             "passWithNoTests": true
@@ -449,9 +420,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/domain/home"
-          ],
+          "outputs": ["dist/libs/domain/home"],
           "options": {
             "project": "libs/domain/home/ng-package.json"
           },
@@ -467,9 +436,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain/home"
-          ],
+          "outputs": ["coverage/libs/domain/home"],
           "options": {
             "jestConfig": "libs/domain/home/jest.config.js",
             "passWithNoTests": true
@@ -494,9 +461,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/domain/not-found"
-          ],
+          "outputs": ["dist/libs/domain/not-found"],
           "options": {
             "project": "libs/domain/not-found/ng-package.json"
           },
@@ -512,9 +477,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain/not-found"
-          ],
+          "outputs": ["coverage/libs/domain/not-found"],
           "options": {
             "jestConfig": "libs/domain/not-found/jest.config.js",
             "passWithNoTests": true
@@ -539,9 +502,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/domain/resource"
-          ],
+          "outputs": ["dist/libs/domain/resource"],
           "options": {
             "project": "libs/domain/resource/ng-package.json"
           },
@@ -557,9 +518,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain/resource"
-          ],
+          "outputs": ["coverage/libs/domain/resource"],
           "options": {
             "jestConfig": "libs/domain/resource/jest.config.js",
             "passWithNoTests": true
@@ -584,9 +543,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/domain/category"
-          ],
+          "outputs": ["dist/libs/domain/category"],
           "options": {
             "project": "libs/domain/category/ng-package.json"
           },
@@ -602,9 +559,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain/category"
-          ],
+          "outputs": ["coverage/libs/domain/category"],
           "options": {
             "jestConfig": "libs/domain/category/jest.config.js",
             "passWithNoTests": true
@@ -629,9 +584,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/domain/resource-new"
-          ],
+          "outputs": ["dist/libs/domain/resource-new"],
           "options": {
             "project": "libs/domain/resource-new/ng-package.json"
           },
@@ -647,9 +600,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain/resource-new"
-          ],
+          "outputs": ["coverage/libs/domain/resource-new"],
           "options": {
             "jestConfig": "libs/domain/resource-new/jest.config.js",
             "passWithNoTests": true
@@ -674,9 +625,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/domain/search"
-          ],
+          "outputs": ["dist/libs/domain/search"],
           "options": {
             "project": "libs/domain/search/ng-package.json"
           },
@@ -692,9 +641,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain/search"
-          ],
+          "outputs": ["coverage/libs/domain/search"],
           "options": {
             "jestConfig": "libs/domain/search/jest.config.js",
             "passWithNoTests": true
@@ -719,9 +666,7 @@
       "architect": {
         "build": {
           "builder": "@nrwl/angular:ng-packagr-lite",
-          "outputs": [
-            "dist/libs/domain/search-box"
-          ],
+          "outputs": ["dist/libs/domain/search-box"],
           "options": {
             "project": "libs/domain/search-box/ng-package.json"
           },
@@ -737,9 +682,7 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/libs/domain/search-box"
-          ],
+          "outputs": ["coverage/libs/domain/search-box"],
           "options": {
             "jestConfig": "libs/domain/search-box/jest.config.js",
             "passWithNoTests": true
@@ -751,6 +694,47 @@
             "lintFilePatterns": [
               "libs/domain/search-box/src/**/*.ts",
               "libs/domain/search-box/src/**/*.html"
+            ]
+          }
+        }
+      }
+    },
+    "shared-auth": {
+      "projectType": "library",
+      "root": "libs/shared/auth",
+      "sourceRoot": "libs/shared/auth/src",
+      "prefix": "ab",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:ng-packagr-lite",
+          "outputs": ["dist/libs/shared/auth"],
+          "options": {
+            "project": "libs/shared/auth/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/shared/auth/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "libs/shared/auth/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/shared/auth"],
+          "options": {
+            "jestConfig": "libs/shared/auth/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "libs/shared/auth/src/**/*.ts",
+              "libs/shared/auth/src/**/*.html"
             ]
           }
         }

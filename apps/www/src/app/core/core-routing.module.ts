@@ -37,6 +37,11 @@ const routes: Routes = [
     RouterModule.forRoot([
       ...routes,
       notFoundRoute,
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('@ab/auth').then((module) => module.AuthModule),
+      },
     ]),
   ],
   exports: [RouterModule],
