@@ -1,1 +1,6 @@
-<p>resource-new works!</p>
+<section>
+  <ab-ui-header [header]="header"></ab-ui-header>
+  <ab-resource-new *ngIf="categories$ | async as categories"
+                   [categories]="categories" (send)="onSend($event)">
+  </ab-resource-new>
+</section>
