@@ -7,10 +7,10 @@
     <ng-content select=".navbar-start">
     </ng-content>
     <div class="navbar-end mt-4 mr-4">
-      <!-- <aside *ngIf="notification$ | async as notification"
+      <aside *ngIf="notification$ | async as notification"
              class="notification {{notification.class}}">
         {{ notification.message }}
-      </aside> -->
+      </aside>
       <a [routerLink]="['/resource-new']" class="button ">Add new Resource</a>
     </div>
   </div>

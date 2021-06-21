@@ -14,3 +14,4 @@ export class ErrorHandlerService implements ErrorHandler {
       label: error.message + '@' + error.stack || 'unknown',
     });
   }
+}
