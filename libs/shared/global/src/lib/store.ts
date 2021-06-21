@@ -18,8 +18,20 @@ export class Strore<T> {
     this._actions$ = new BehaviorSubject(initialAction);
   }
 
-  setState(newState: T){
-    this._state$.next( this.getClone(newState) );
+  setState(mutation: Partial<T>){
+    const mutatedState = {...this.getSnapshot(), ...mutation}
+    this._state$.next( this.getClone(mutatedState) );
+  }
+
+  dispatch(action: Action) {
+    this.setState(action.payload);
+    this._actions$.next(action);
+  }
+
+  reduce(action: Action, reducer: ( currentState:T , payload: any) =>T) {
+    const mutatedState = reducer(this.getSnapshot(), action.payload);
+    this._state$.next( this.getClone(mutatedState) );
+    this._actions$.next(action);
   }
 
   getSnapshot() {
@@ -28,6 +40,10 @@ export class Strore<T> {
 
   getState$(){
     return this._state$.asObservable().pipe(map(state => this.getClone(state) ));
+  }
+
+  getAction$(){
+    return this._actions$.asObservable();
   }
 
   private getClone(source: T): T{
