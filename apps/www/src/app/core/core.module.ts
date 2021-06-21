@@ -1,3 +1,4 @@
+import { TrackerStoreService } from '@ab/global';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -10,7 +11,7 @@ import { CoreRoutingModule } from './core-routing.module';
   imports: [CommonModule, CoreRoutingModule, HttpClientModule],
 })
 export class CoreModule {
-  constructor(router: Router) {
+  constructor(router: Router, tracker: TrackerStoreService) {
     router.events
       .pipe(
         filter((routerEvent) => routerEvent instanceof NavigationEnd),
@@ -18,7 +19,7 @@ export class CoreModule {
       )
       .subscribe({
         next: (navigation: NavigationEnd) =>
-          console.log({
+          tracker.trackEntry({
             category: 'BUSINESS',
             event: 'NAV',
             label: navigation.urlAfterRedirects,
