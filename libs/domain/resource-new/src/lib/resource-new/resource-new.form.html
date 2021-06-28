@@ -10,45 +10,27 @@
           </option>
         </select></div>
     </div>
-    <div class="field mt-4 ">
-      <label for="resourcename" class="label"> The resource commercial name </label>
-      <input formControlName="resourcename"
-             name="resourcename"
-             id="resourcename"
-             placeholder="The ngSuperTool"
-             class="input" autocomplete="off" />
-    </div>
-    <div class="field mt-4 ">
-      <label for="resourcename" class="label"> The resource commercial name </label>
-      <input formControlName="resourcename"
-             name="resourcename"
-             id="resourcename"
-             placeholder="The ngSuperTool"
-             class="input" autocomplete="off" />
-      <span *ngIf="hasErrorToShow('resourcename')">
-        <em> {{ getErrorMessage('resourcename') }} </em>
-      </span>
-    </div>
-    <div class="field mt-4 ">
-      <label for="description" class="label"> A short description </label>
-      <input formControlName="description"
-             name="description"
-             id="description"
-             placeholder="Cool things about the resource"
-             class="input" autocomplete="off" />
-      <span *ngIf="hasErrorToShow('description')">
-        <em> {{ getErrorMessage('description') }} </em>
-      </span>
-    </div>
-    <div class="field mt-4 ">
-      <label for="url" class="label"> The url of the home page or repository </label>
-      <input formControlName="url"
-             type="url"
-             name="url"
-             id="url"
-             placeholder="https://cool.dev"
-             class="input" autocomplete="off" />
-    </div>
+    <ab-form-control
+                     [form]="form"
+                     formControlName="resourcename"
+                     type="text"
+                     label="The resource commercial name"
+                     placeholder="The ngSuperTool">
+    </ab-form-control>
+    <ab-form-control
+                     [form]="form"
+                     formControlName="description"
+                     type="text"
+                     label="A short description"
+                     placeholder="Cool things about the resource">
+    </ab-form-control>
+    <ab-form-control
+                     [form]="form"
+                     type="url"
+                     formControlName="url"
+                     label="The home page"
+                     placeholder="https://www.ng-super-tool.dev">
+    </ab-form-control>
   </fieldset>
   <input type="submit" value="Add to the catalog!" [disabled]="form.invalid"
          class="button is-link mt-4" />
