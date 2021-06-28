@@ -1,3 +1,4 @@
+import { AbValidators } from '@ab/form'
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 
@@ -12,7 +13,7 @@ export class CourseForm {
   constructor(private fb: FormBuilder) {}
   buildForm() {
     this.form = this.fb.group({
-      date: new FormControl(''),
+      date: new FormControl('', [AbValidators.realisticDate]),
       teacher: new FormControl(''),
       academy: new FormControl(''),
     });

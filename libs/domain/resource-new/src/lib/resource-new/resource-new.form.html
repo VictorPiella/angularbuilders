@@ -32,6 +32,20 @@
                      placeholder="https://www.ng-super-tool.dev">
     </ab-form-control>
     <ab-course-form [hidden]="form.value.categoryId !=='courses'"></ab-course-form>
+    <ab-form-control
+                     [form]="form"
+                     type="number"
+                     formControlName="price"
+                     label="Price in US$"
+                     placeholder="free">
+    </ab-form-control>
+    <ab-form-control
+                     [form]="form"
+                     type="number"
+                     formControlName="confirmPrice"
+                     label="Confirm the dollar amount"
+                     placeholder="free">
+    </ab-form-control>
   </fieldset>
   <input type="submit" value="Add to the catalog!" [disabled]="form.invalid"
          class="button is-link mt-4" />

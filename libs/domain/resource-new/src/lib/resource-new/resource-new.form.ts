@@ -1,3 +1,4 @@
+import { AbValidators } from '@ab/form';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -5,7 +6,7 @@ import {
   Input,
   OnInit,
   Output,
-  ViewChild
+  ViewChild,
 } from '@angular/core';
 import {
   FormBuilder,
@@ -32,19 +33,32 @@ export class ResourceNewForm implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      categoryId: new FormControl('', [Validators.required]),
-      resourcename: new FormControl('', [
-        Validators.required,
-        Validators.minLength(2),
-      ]),
-      description: new FormControl('', [Validators.minLength(3)]),
-      url: new FormControl('', []),
-      course: this.courseSubForm.buildForm(),
-    });
+    this.form = this.fb.group(
+      {
+        categoryId: new FormControl('aa', [Validators.required]),
+        resourcename: new FormControl('aaa', [
+          Validators.required,
+          Validators.minLength(2),
+        ]),
+        description: new FormControl('', [Validators.minLength(3)]),
+        url: new FormControl('https://', [AbValidators.includes('https://')]),
+        course: this.courseSubForm.buildForm(),
+        price: new FormControl(0, []),
+        confirmPrice: new FormControl(0, []),
+      },
+      {
+        validators: [AbValidators.confirmed('price', 'confirmPrice')],
+        updateOn: 'blur',
+      }
+    );
   }
   onSubmit() {
-    this.send.next(this.form.value);
+    const newResource = { ...this.form.value };
+    if (newResource.categoryId !== 'courses') {
+      delete newResource.course;
+    }
+    delete newResource.confirmPrice;
+    this.send.next(newResource);
   }
   hasErrorToShow(formControlName: string) {
     const control = this.form.controls[formControlName];
