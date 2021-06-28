@@ -31,6 +31,7 @@
                      label="The home page"
                      placeholder="https://www.ng-super-tool.dev">
     </ab-form-control>
+    <ab-course-form [hidden]="form.value.categoryId !=='courses'"></ab-course-form>
   </fieldset>
   <input type="submit" value="Add to the catalog!" [disabled]="form.invalid"
          class="button is-link mt-4" />

@@ -5,6 +5,7 @@ import {
   Input,
   OnInit,
   Output,
+  ViewChild
 } from '@angular/core';
 import {
   FormBuilder,
@@ -12,6 +13,7 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
+import { CourseForm } from '../course/course.form';
 import { Category } from '../models/category';
 import { Resource } from '../models/resource';
 
@@ -24,6 +26,7 @@ import { Resource } from '../models/resource';
 export class ResourceNewForm implements OnInit {
   @Input() categories: Category[] = [];
   @Output() send = new EventEmitter<Resource>();
+  @ViewChild(CourseForm, { static: true }) courseSubForm!: CourseForm;
   form!: FormGroup;
 
   constructor(private fb: FormBuilder) {}
@@ -37,6 +40,7 @@ export class ResourceNewForm implements OnInit {
       ]),
       description: new FormControl('', [Validators.minLength(3)]),
       url: new FormControl('', []),
+      course: this.courseSubForm.buildForm(),
     });
   }
   onSubmit() {
