@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TruncatePipe } from './pipes/truncate.pipe';
 import { RouterModule } from '@angular/router';
+import { TrackDirective } from './directives/track.directive';
 import { HeaderComponent } from './components/header/header.component';
 import { CardTemplate } from './template/card/card.template';
 
@@ -10,12 +11,14 @@ import { CardTemplate } from './template/card/card.template';
   declarations: [
     HeaderComponent,
     CardTemplate,
-    TruncatePipe
+    TruncatePipe,
+    TrackDirective,
   ],
   exports: [
     TruncatePipe,
     HeaderComponent,
-    CardTemplate
+    CardTemplate,
+    TrackDirective,
   ],
 })
 export class UiModule {}
