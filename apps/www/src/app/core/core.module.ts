@@ -11,6 +11,9 @@ import { CoreRoutingModule } from './core-routing.module';
   declarations: [],
   imports: [CommonModule, CoreRoutingModule, HttpClientModule],
   providers: [
+    // {provide: HTTP_INTERCEPTORS, useClass: AdapterInterceptor,
+    //   multi: true
+    // },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TrackerInterceptor,
