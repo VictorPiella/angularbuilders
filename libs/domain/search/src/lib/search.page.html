@@ -1,1 +1,4 @@
-<p>search works!</p>
+<ab-results
+            *ngIf="resources$ | async as resources"
+            [resources]="resources">
+</ab-results>
